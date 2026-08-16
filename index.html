@@ -227,6 +227,23 @@
   @media (max-width: 720px){ .coach-grid{grid-template-columns:1fr 1fr} }
   @media (max-width: 480px){ .coach-grid{grid-template-columns:1fr} }
 
+  /* accents */
+  .accent-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5)}
+  .accent-group{border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-raised); padding:var(--space-5)}
+  .accent-group-head{display:flex; align-items:baseline; gap:.6rem; margin-bottom:var(--space-4)}
+  .accent-group-head h3{font-family:var(--font-display); font-size:1.3rem}
+  .accent-chips{display:flex; flex-wrap:wrap; gap:.5rem}
+  .accent-chip{border:1px solid var(--border-strong); border-radius:999px; padding:.5rem 1rem; font-size:.82rem; background:transparent; color:var(--text); cursor:pointer; transition:border-color .15s ease, background .15s ease}
+  .accent-chip:hover{border-color:var(--accent); color:var(--accent)}
+  .accent-chip[data-playing="true"]{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .accent-note{margin-top:var(--space-5); font-size:.8rem; color:var(--text-faint); max-width:72ch}
+  .culture-block{margin-top:var(--space-8); padding-top:var(--space-6); border-top:1px solid var(--border)}
+  .culture-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); margin-top:var(--space-4)}
+  .culture-card{border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-raised); padding:var(--space-5); display:flex; flex-direction:column; gap:var(--space-2)}
+  .culture-card h3{font-family:var(--font-body); font-size:1rem; font-weight:700}
+  .culture-card p{color:var(--text-muted); font-size:.86rem}
+  @media (max-width: 900px){ .accent-groups{grid-template-columns:1fr} .culture-grid{grid-template-columns:1fr} }
+
   /* demo */
   .demo-shell{display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8); align-items:stretch}
   .demo-card{border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-raised); box-shadow:var(--shadow); padding:var(--space-6); display:flex; flex-direction:column; gap:var(--space-5)}
@@ -675,6 +692,64 @@
     </div>
   </section>
 
+  <section id="accents">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="accents.eyebrow">Bibliothèque d'accents</p>
+        <h2 data-i18n="accents.title">Trois régions du monde anglophone.</h2>
+        <p data-i18n="accents.lead">Clique un accent pour en entendre un aperçu sonore. Chaque groupe est aussi accompagné d'un module culturel dédié, plus bas.</p>
+      </div>
+      <div class="accent-groups">
+        <div class="accent-group">
+          <div class="accent-group-head"><span class="chan">GROUPE</span><h3>USA</h3></div>
+          <div class="accent-chips">
+            <button class="accent-chip" type="button" data-lang="en-US" data-i18n="accents.usa1">General American</button>
+            <button class="accent-chip" type="button" data-lang="en-US" data-i18n="accents.usa2">Southern US</button>
+            <button class="accent-chip" type="button" data-lang="en-US" data-i18n="accents.usa3">New York</button>
+            <button class="accent-chip" type="button" data-lang="en-US" data-i18n="accents.usa4">California</button>
+          </div>
+        </div>
+        <div class="accent-group">
+          <div class="accent-group-head"><span class="chan">GROUPE</span><h3>GB</h3></div>
+          <div class="accent-chips">
+            <button class="accent-chip" type="button" data-lang="en-GB" data-i18n="accents.gb1">British RP</button>
+            <button class="accent-chip" type="button" data-lang="en-GB" data-i18n="accents.gb2">Scottish</button>
+            <button class="accent-chip" type="button" data-lang="en-GB" data-i18n="accents.gb3">Cockney (London)</button>
+            <button class="accent-chip" type="button" data-lang="en-GB" data-i18n="accents.gb4">Welsh</button>
+          </div>
+        </div>
+        <div class="accent-group">
+          <div class="accent-group-head"><span class="chan">GROUPE</span><h3>AFRICAN</h3></div>
+          <div class="accent-chips">
+            <button class="accent-chip" type="button" data-lang="en-NG" data-i18n="accents.af1">Nigerian</button>
+            <button class="accent-chip" type="button" data-lang="en-GH" data-i18n="accents.af2">Ghanaian</button>
+            <button class="accent-chip" type="button" data-lang="en-ZA" data-i18n="accents.af3">South African</button>
+            <button class="accent-chip" type="button" data-lang="en-KE" data-i18n="accents.af4">Kenyan</button>
+          </div>
+        </div>
+      </div>
+      <p class="accent-note" data-i18n="accents.note">Aperçu basé sur les voix disponibles sur ton appareil — certains accents régionaux précis dépendent des voix installées sur ton navigateur, et peuvent revenir à l'accent générique le plus proche.</p>
+
+      <div class="culture-block">
+        <p class="eyebrow" data-i18n="accents.cultureEyebrow">Modules culturels</p>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <h3 data-i18n="accents.cult1t">African History and Literature</h3>
+            <p data-i18n="accents.cult1d">De la littérature nigériane à l'histoire de l'Afrique du Sud — apprendre l'anglais à travers des voix et des récits africains.</p>
+          </div>
+          <div class="culture-card">
+            <h3 data-i18n="accents.cult2t">British History and Literature</h3>
+            <p data-i18n="accents.cult2d">Shakespeare, l'histoire britannique, la littérature victorienne — le patrimoine culturel qui a façonné l'anglais du Royaume-Uni.</p>
+          </div>
+          <div class="culture-card">
+            <h3 data-i18n="accents.cult3t">American History and Literature</h3>
+            <p data-i18n="accents.cult3d">Des textes fondateurs à la littérature américaine contemporaine — comprendre les États-Unis par leurs récits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="demo">
     <div class="container">
       <div class="section-head">
@@ -1113,6 +1188,7 @@
           <li><a href="#skills" data-i18n="nav.skills">Programme</a></li>
           <li><a href="#features" data-i18n="nav.features">Fonctionnalités</a></li>
           <li><a href="#coaches" data-i18n="nav.coaches">Coachs</a></li>
+          <li><a href="#accents" data-i18n="accents.eyebrow">Bibliothèque d'accents</a></li>
           <li><a href="#pricing" data-i18n="nav.pricing">Tarifs</a></li>
         </ul>
       </div>
@@ -1228,6 +1304,29 @@
     "coaches.title":{fr:"Dix coachs IA, une seule méthode.",en:"Ten AI coaches, one method."},
     "coaches.lead":{fr:"Chaque coach est une intelligence artificielle vocale spécialisée, conçue à partir de la méthode de Coach ZOH. Choisis celui qui correspond à ton objectif — tu peux en changer à tout moment.",en:"Each coach is a specialised voice AI, built on the method designed by Coach ZOH. Pick the one that matches your goal — you can switch anytime."},
     "coaches.note":{fr:"Tous nos coachs sont des intelligences artificielles — c'est assumé, pas caché. Voix de synthèse entraînées sur la prononciation native, disponibles 24h/24, aussi patientes à la 50ᵉ répétition qu'à la première.",en:"All our coaches are artificial intelligence — we say so openly. Synthetic voices trained on native pronunciation, available 24/7, as patient on the 50th repeat as on the first."},
+    "accents.eyebrow":{fr:"Bibliothèque d'accents",en:"Accent library"},
+    "accents.title":{fr:"Trois régions du monde anglophone.",en:"Three regions of the English-speaking world."},
+    "accents.lead":{fr:"Clique un accent pour en entendre un aperçu sonore. Chaque groupe est aussi accompagné d'un module culturel dédié, plus bas.",en:"Click an accent to hear a quick preview. Each group also comes with its own culture module, below."},
+    "accents.usa1":{fr:"General American",en:"General American"},
+    "accents.usa2":{fr:"Southern US",en:"Southern US"},
+    "accents.usa3":{fr:"New York",en:"New York"},
+    "accents.usa4":{fr:"California",en:"California"},
+    "accents.gb1":{fr:"British RP",en:"British RP"},
+    "accents.gb2":{fr:"Scottish",en:"Scottish"},
+    "accents.gb3":{fr:"Cockney (London)",en:"Cockney (London)"},
+    "accents.gb4":{fr:"Welsh",en:"Welsh"},
+    "accents.af1":{fr:"Nigerian",en:"Nigerian"},
+    "accents.af2":{fr:"Ghanaian",en:"Ghanaian"},
+    "accents.af3":{fr:"South African",en:"South African"},
+    "accents.af4":{fr:"Kenyan",en:"Kenyan"},
+    "accents.note":{fr:"Aperçu basé sur les voix disponibles sur ton appareil — certains accents régionaux précis dépendent des voix installées sur ton navigateur, et peuvent revenir à l'accent générique le plus proche.",en:"Preview based on the voices available on your device — some precise regional accents depend on voices installed in your browser, and may fall back to the closest generic accent."},
+    "accents.cultureEyebrow":{fr:"Modules culturels",en:"Culture modules"},
+    "accents.cult1t":{fr:"African History and Literature",en:"African History and Literature"},
+    "accents.cult1d":{fr:"De la littérature nigériane à l'histoire de l'Afrique du Sud — apprendre l'anglais à travers des voix et des récits africains.",en:"From Nigerian literature to South African history — learning English through African voices and stories."},
+    "accents.cult2t":{fr:"British History and Literature",en:"British History and Literature"},
+    "accents.cult2d":{fr:"Shakespeare, l'histoire britannique, la littérature victorienne — le patrimoine culturel qui a façonné l'anglais du Royaume-Uni.",en:"Shakespeare, British history, Victorian literature — the cultural heritage that shaped UK English."},
+    "accents.cult3t":{fr:"American History and Literature",en:"American History and Literature"},
+    "accents.cult3d":{fr:"Des textes fondateurs à la littérature américaine contemporaine — comprendre les États-Unis par leurs récits.",en:"From founding texts to contemporary American literature — understanding the US through its stories."},
     "demo.eyebrow":{fr:"Essaie maintenant",en:"Try it now"},
     "demo.title":{fr:"Le tuner de prononciation.",en:"The pronunciation tuner."},
     "demo.lead":{fr:"Écoute la phrase prononcée par le moteur vocal de ton navigateur, puis simule un essai pour voir un aperçu du retour de Marcus, l'un de nos coachs IA.",en:"Listen to the phrase spoken by your browser's voice engine, then simulate a take to see a preview of feedback from Marcus, one of our AI coaches."},
@@ -1457,6 +1556,17 @@
     draw();
   }
   initHeroWave(document.getElementById("heroWave"));
+
+  /* ---------- accent chips ---------- */
+  var accentSample = "The weather has been lovely this week.";
+  document.querySelectorAll(".accent-chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      document.querySelectorAll(".accent-chip[data-playing]").forEach(function(c){ c.removeAttribute("data-playing"); });
+      chip.setAttribute("data-playing", "true");
+      speak(accentSample, chip.getAttribute("data-lang"));
+      window.setTimeout(function(){ chip.removeAttribute("data-playing"); }, 2200);
+    });
+  });
 
   /* ---------- practice widget factory ---------- */
   var phrases = [
