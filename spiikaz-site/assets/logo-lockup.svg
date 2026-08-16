@@ -1,0 +1,21 @@
+<svg viewBox="0 0 620 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="lockupTitle">
+  <title id="lockupTitle">SpiikaZ — formation intensive d'anglais</title>
+  <defs>
+    <clipPath id="lockupBadgeClip"><circle cx="85" cy="88" r="78"/></clipPath>
+  </defs>
+  <circle cx="85" cy="88" r="80" fill="#FFFFFF"/>
+  <g clip-path="url(#lockupBadgeClip)">
+    <rect x="7" y="10" width="156" height="156" fill="#012169"/>
+    <line x1="7" y1="10" x2="163" y2="166" stroke="#FFFFFF" stroke-width="27"/>
+    <line x1="163" y1="10" x2="7" y2="166" stroke="#FFFFFF" stroke-width="27"/>
+    <line x1="7" y1="10" x2="163" y2="166" stroke="#C8102E" stroke-width="15"/>
+    <line x1="163" y1="10" x2="7" y2="166" stroke="#C8102E" stroke-width="15"/>
+    <rect x="7" y="66" width="156" height="44" fill="#FFFFFF"/>
+    <rect x="63" y="10" width="44" height="156" fill="#FFFFFF"/>
+    <rect x="7" y="75.5" width="156" height="25" fill="#C8102E"/>
+    <rect x="72.5" y="10" width="25" height="156" fill="#C8102E"/>
+  </g>
+  <circle cx="85" cy="88" r="78" fill="none" stroke="#012169" stroke-width="5"/>
+  <text x="205" y="112" font-family="'Arial Black', Arial, -apple-system, 'Segoe UI', sans-serif" font-weight="900" font-size="64" letter-spacing="-1" fill="#0B1730">Spiika<tspan fill="#C8102E">Z</tspan></text>
+  <text x="207" y="142" font-family="ui-monospace, 'SF Mono', Consolas, monospace" font-size="14" letter-spacing="3" fill="#48507A">FORMATION INTENSIVE D'ANGLAIS</text>
+</svg>

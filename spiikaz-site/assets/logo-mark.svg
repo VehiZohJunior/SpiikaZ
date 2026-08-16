@@ -1,0 +1,19 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="markTitle">
+  <title id="markTitle">SpiikaZ — badge Union Jack</title>
+  <defs>
+    <clipPath id="badgeClip"><circle cx="80" cy="80" r="76"/></clipPath>
+  </defs>
+  <circle cx="80" cy="80" r="78" fill="#FFFFFF"/>
+  <g clip-path="url(#badgeClip)">
+    <rect x="4" y="4" width="152" height="152" fill="#012169"/>
+    <line x1="4" y1="4" x2="156" y2="156" stroke="#FFFFFF" stroke-width="27"/>
+    <line x1="156" y1="4" x2="4" y2="156" stroke="#FFFFFF" stroke-width="27"/>
+    <line x1="4" y1="4" x2="156" y2="156" stroke="#C8102E" stroke-width="15"/>
+    <line x1="156" y1="4" x2="4" y2="156" stroke="#C8102E" stroke-width="15"/>
+    <rect x="4" y="58" width="152" height="44" fill="#FFFFFF"/>
+    <rect x="58" y="4" width="44" height="152" fill="#FFFFFF"/>
+    <rect x="4" y="67.5" width="152" height="25" fill="#C8102E"/>
+    <rect x="67.5" y="4" width="25" height="152" fill="#C8102E"/>
+  </g>
+  <circle cx="80" cy="80" r="76" fill="none" stroke="#012169" stroke-width="5"/>
+</svg>
