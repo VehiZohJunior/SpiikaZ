@@ -328,17 +328,20 @@
 
   /* dashboard */
   .app-shell{min-height:100vh; display:flex}
-  .app-sidebar{width:248px; flex:none; background:var(--bg-raised); border-right:1px solid var(--border); display:flex; flex-direction:column; padding:var(--space-5) var(--space-4); position:sticky; top:0; height:100vh; overflow-y:auto}
-  .app-sidebar .wordmark{margin-bottom:var(--space-6)}
-  .app-sidenav{display:flex; flex-direction:column; gap:.15rem; flex:1}
-  .app-sidenav a{display:flex; align-items:center; gap:.7rem; padding:.6rem .7rem; border-radius:var(--radius-sm); color:var(--text-muted); text-decoration:none; font-size:.87rem}
-  .app-sidenav a:hover{background:var(--bg-sunken); color:var(--text)}
-  .app-sidenav a.active{background:color-mix(in srgb, var(--accent) 12%, var(--bg-raised)); color:var(--accent); font-weight:600}
-  .app-sidenav a svg{width:17px; height:17px; flex:none}
-  .app-sidenav .soon{margin-inline-start:auto; font-family:var(--font-mono); font-size:.6rem; letter-spacing:.03em; color:var(--text-faint); border:1px solid var(--border-strong); border-radius:999px; padding:.05rem .4rem}
-  .app-sidefoot{border-top:1px solid var(--border); padding-top:var(--space-4); margin-top:var(--space-4); display:flex; flex-direction:column; gap:.7rem}
-  .app-sidefoot .app-user{display:flex; align-items:center; justify-content:space-between; font-size:.85rem}
+  .app-sidebar{
+    width:212px; flex:none; display:flex; flex-direction:column; padding:var(--space-5) var(--space-3);
+    position:sticky; top:0; height:100vh; overflow-y:auto; color:#FFFFFF;
+    background-image:
+      repeating-linear-gradient(135deg, transparent 0 118px, rgba(255,255,255,0.85) 118px 122px, rgba(200,16,46,0.92) 122px 136px, rgba(255,255,255,0.85) 136px 140px, transparent 140px 258px),
+      repeating-linear-gradient(135deg, #012169 0 60px, #0A2A78 60px 120px);
+  }
+  .app-sidenav{display:flex; flex-direction:column; gap:.2rem}
+  .app-sidenav a{display:flex; align-items:center; gap:.6rem; padding:.6rem .6rem; border-radius:var(--radius-sm); color:rgba(255,255,255,0.88); text-decoration:none; font-size:.78rem; line-height:1.25}
+  .app-sidenav a:hover{background:rgba(255,255,255,0.14); color:#FFFFFF}
+  .app-sidenav a svg{width:16px; height:16px; flex:none}
+  .app-sidenav .soon{margin-inline-start:auto; font-family:var(--font-mono); font-size:.56rem; letter-spacing:.02em; color:rgba(255,255,255,0.75); border:1px solid rgba(255,255,255,0.35); border-radius:999px; padding:.05rem .35rem; flex:none}
   .app-content{flex:1; min-width:0; padding:var(--space-6)}
+  .app-topbar{display:flex; align-items:center; justify-content:flex-end; gap:var(--space-3); margin-bottom:var(--space-5); font-size:.85rem}
   .app-banner{background:#012169; color:#F5F6FB; border-radius:var(--radius); padding:var(--space-6); position:relative; overflow:hidden; margin-bottom:var(--space-5)}
   .app-banner::before{content:""; position:absolute; inset:0; background:radial-gradient(50% 80% at 85% 20%, rgba(200,16,46,0.18), transparent 70%); pointer-events:none}
   .app-banner-inner{position:relative; display:flex; justify-content:space-between; align-items:flex-end; gap:var(--space-5); flex-wrap:wrap}
@@ -368,11 +371,10 @@
   .session-card span{font-size:.8rem; color:var(--text-faint)}
   @media (max-width: 980px){
     .app-shell{flex-direction:column}
-    .app-sidebar{width:100%; height:auto; position:static; flex-direction:row; align-items:center; overflow-x:auto; padding:var(--space-3) var(--space-4)}
-    .app-sidebar .wordmark{margin-bottom:0; margin-inline-end:var(--space-4)}
+    .app-sidebar{width:100%; height:auto; position:static; flex-direction:row; overflow-x:auto; padding:var(--space-3)}
     .app-sidenav{flex-direction:row; flex:none}
+    .app-sidenav a{flex-direction:column; text-align:center; gap:.3rem; white-space:nowrap; padding:.5rem .6rem}
     .app-sidenav .soon{display:none}
-    .app-sidefoot{border-top:none; border-inline-start:1px solid var(--border); margin-top:0; padding-top:0; padding-inline-start:var(--space-4); margin-inline-start:auto; flex-direction:row}
     .app-grid-top{grid-template-columns:1fr}
     .app-grid-bottom{grid-template-columns:1fr 1fr}
   }
@@ -875,27 +877,22 @@
 <main id="route-dashboard" hidden>
   <div class="app-shell">
     <aside class="app-sidebar">
-      <a class="wordmark" href="#/">
-        <svg class="badge-mark" viewBox="0 0 32 32" width="22" height="22"><defs><clipPath id="wmClip2"><circle cx="16" cy="16" r="14.5"/></clipPath></defs><circle cx="16" cy="16" r="15.5" fill="#FFFFFF"/><g clip-path="url(#wmClip2)"><rect x="2" y="2" width="28" height="28" fill="#012169"/><line x1="2" y1="2" x2="30" y2="30" stroke="#FFFFFF" stroke-width="5.5"/><line x1="30" y1="2" x2="2" y2="30" stroke="#FFFFFF" stroke-width="5.5"/><line x1="2" y1="2" x2="30" y2="30" stroke="#C8102E" stroke-width="3"/><line x1="30" y1="2" x2="2" y2="30" stroke="#C8102E" stroke-width="3"/><rect x="2" y="12" width="28" height="8" fill="#FFFFFF"/><rect x="12" y="2" width="8" height="28" fill="#FFFFFF"/><rect x="2" y="13.75" width="28" height="4.5" fill="#C8102E"/><rect x="13.75" y="2" width="4.5" height="28" fill="#C8102E"/></g><circle cx="16" cy="16" r="14.5" fill="none" stroke="#012169" stroke-width="1"/></svg>
-        Spiika<span class="z-accent">Z</span>
-      </a>
       <nav class="app-sidenav">
-        <a href="#/dashboard" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>Tableau de bord</a>
-        <a href="#coaches"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>Mes coachs</a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>Vocabulaire<span class="soon">Bientôt</span></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg>Certificats<span class="soon">Bientôt</span></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>Test de niveau<span class="soon">Bientôt</span></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/></svg>Exercices<span class="soon">Bientôt</span></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg>Quiz<span class="soon">Bientôt</span></a>
-        <a href="#pricing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Sessions live</a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="currentColor" stroke="none"/></svg>Enregistrements<span class="soon">Bientôt</span></a>
+        <a href="#coaches"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2V5z"/></svg>My English Courses</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 7V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-1"/><rect x="5" y="7" width="14" height="10" rx="1.5"/></svg>Vocabulary Flashcards<span class="soon">Soon</span></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg>Certificates and Diplomas<span class="soon">Soon</span></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12l5 5L20 6"/></svg>CEFR Placement Tests<span class="soon">Soon</span></a>
+        <a href="#demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/></svg>Practice</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg>Quizzes and Final Exams<span class="soon">Soon</span></a>
+        <a href="#pricing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Live Classes (Visio)</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="currentColor" stroke="none"/></svg>Recorded Classes<span class="soon">Soon</span></a>
       </nav>
-      <div class="app-sidefoot">
-        <div class="app-user"><span id="appUserName">—</span></div>
-        <button class="btn btn-ghost btn-sm btn-block" id="logoutBtn" type="button">Se déconnecter</button>
-      </div>
     </aside>
     <div class="app-content">
+      <div class="app-topbar">
+        <span id="appUserName">—</span>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">Se déconnecter</button>
+      </div>
       <div class="app-banner">
         <div class="app-banner-inner">
           <div>
